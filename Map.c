@@ -155,7 +155,8 @@ bool wallHereDOWN(struct Map* thing, int i, int j){
     }
     return false;
 }
-
+//The wall is less being "put" here more like we're putting down an indicator that the wall exists
+//essentially just adding it to the wall map
 void putWallHERER(struct Map* thing, int i, int j, bool right) {
     establishWallR(thing->wallMap[i][j], right);
 }
@@ -165,18 +166,18 @@ void putWallHERED(struct Map* thing, int i, int j, bool down) {
 }
 
 void putDownWall(struct Map* thing, struct Mouse* mThing, int direction, bool ToF) {
-    if(direction == 0) {
+    if(direction == 90) {
         putWallHERER(struct Map* thing, mThing->i, mThing->j, ToF)
     }
-    else if(direction == 90) {
+    else if(direction == 180) {
         putWallHERED(struct Map* thing, mThing->i, mThing->j, ToF)
 
     }
     //not on the same tile so array location is adjusted
-    else if(direction == 180) {
+    else if(direction == 270) {
         putWallHERER(struct Map* thing, mThing->i, mThing->j, ToF)
     }
-    else if(direction == 270) {
+    else if(direction == 360 || direction == 0) {
         putWallHERED(struct Map* thing, mThing->i, mThing->j, ToF);
     }
 
