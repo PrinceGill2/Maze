@@ -18,17 +18,29 @@ void performFF(struct fFIll* fThing, struct Mouse* moThing, struct Map* mThing) 
    while(!isEmpty(stThing)) {
    struct Tile* check = pop(stThing);
    //we first check to see if we can increase the manhattan value we will check accounting for walls
-  struct Stack* stThing = createStack();
- const double PI = 4.0 * atan(1.0);
+ struct MoveQueue* MQ = createMQ();
+   const double PI = 4.0 * atan(1.0);
     double angle = 0;
     for(int i = 0; i < 4 ;i++) {
         angle = i * (PI/2);
         double transJ = cos(angle);
         double transI = sin(angle);
         if(abs(transJ) == 1 || abs(transI) == 1) {
-
+            if(angle == PI/2) {
+            enqueue(MQ, mThing->tileMap[i][j]);
+            }
+            if(angle == PI) {
+            enqueue(MQ, mThing->tileMap[i][j]);
+            }
+            if(angle == 3*(PI/2)) {
+            enqueue(MQ, mThing->tileMap[i][j]);
+            }
+            if(angle == 2*PI) {
+            enqueue(MQ, mThing->tileMap[i][j]);
+            }
          }
     }
+
 
   
    //iff we can then we will do so and add the surrounding tiles (wall or not) to the stack
