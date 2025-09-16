@@ -12,20 +12,14 @@ struct MoveQueue* createMQ()  {
 }
 
 struct Node* lowestManVal(struct MoveQueue* mQ) {
-    bool lowest = false;
-    int counter = 0;
-    struct Node* bestTile = mQ->bQueue->head;
-    while(!lowest) {
-       if(bestTile->thing->manhattanValue > bestTile->nextNode->thing->manhattanValue) {
-            bestTile = bestTile->nextNode;
-
-       } 
-       counter++
-       if(counter == mQ->bQueue->size) {
-            lowest = true;
-       }
-
-    
-    }
-    return bestTile;
+	int lowestNode = mQ->bQueue->head
+	struct Node* currentNode = mQ->bQueue->head;
+	for(int i = 0; i < 4; i++) {
+	if(lowestNode->thing->manhattanValue > currentNode->nextNode->thing->manhattanValue) {
+		lowestVal = currentNode->nextNode;
+		
+		}
+	currentNode = currentNode->nextNode;
+	}
+	return lowestNode;
 }
