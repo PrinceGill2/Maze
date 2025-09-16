@@ -82,6 +82,7 @@ bool sensorRight(){
 }
 
 
+
 //0 degrees
 bool sensorHead(){
     if(API_wallFront()){
@@ -125,7 +126,7 @@ void detnestW(struct Mouse* moThing, struct Map* mThing){
 }
 
 //this is ran once after the mouse arrives at a tile and after that tile has been checked for walls
-struct MoveQueue* tilArMo(struct Mouse* moThing, struct Map* mThing, struct MoveQueue* moveTo){
+void tilArMo(struct Mouse* moThing, struct Map* mThing, struct MoveQueue* moveTo){
     //array calculations 
     int i = moThing->i;
     int j = moThing->j;
@@ -159,6 +160,7 @@ struct MoveQueue* tilArMo(struct Mouse* moThing, struct Map* mThing, struct Move
             }
         }
     }
+    
 }
 
 
