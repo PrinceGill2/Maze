@@ -11,10 +11,33 @@ struct fFill* createFF() {
 }
 
 void performFF(struct fFIll* fThing, struct Mouse* moThing, struct Map* mThing) {
-    
+   struct Stack* stThing = createStack();
+   int i = moThing->i;
+   int j = moThing->j;
+   push(stThing, mThing->tileMap[i][j]);
+   while(!isEmpty(stThing)) {
+   struct Tile* check = pop(stThing);
+   //we first check to see if we can increase the manhattan value we will check accounting for walls
+  struct Stack* stThing = createStack();
+ const double PI = 4.0 * atan(1.0);
+    double angle = 0;
+    for(int i = 0; i < 4 ;i++) {
+        angle = i * (PI/2);
+        double transJ = cos(angle);
+        double transI = sin(angle);
+        if(abs(transJ) == 1 || abs(transI) == 1) {
+
+         }
+    }
+
+  
+   //iff we can then we will do so and add the surrounding tiles (wall or not) to the stack
+   
+   //if we cannot then we move on to the next tile
+   }
 }
 
 void destroyFF(struct fFILL* fThing){
     deleteMap(fThing->theMap);
-    destroyMouse(fThing->theMOuse);
+    destroyMouse(fThing->theMouse);
 }

@@ -133,7 +133,7 @@ struct MoveQueue* tilArMo(struct Mouse* moThing, struct Map* mThing, struct Move
     const double PI = 4.0 * atan(1.0);
     double angle = 0;
     for(int i = 0; i < 4 ;i++) {
-        angle = i + (PI/2);
+        angle = i * (PI/2);
         double transJ = cos(angle);
         double transI = sin(angle);
         if(abs(transJ) == 1 || abs(transI) == 1) {
