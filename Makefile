@@ -2,7 +2,7 @@ CXX = g++
 CC = gcc
 CFLAGS = -Wall -g 
 #LDFLAGS = 
-OBJFILES = Wall.o main.o Tile.o Map.o API.o FloodFill.o TileQueue.o Node.o
+OBJFILES = Wall.o main.o Tile.o Map.o API.o FloodFill.o TileQueue.o Node.o Stack.o
 
 TARGET = final
 
@@ -36,7 +36,10 @@ Node.o: Node.c Node.h Tile.o
 	$(CXX) $(CFLAGS) -c Node.c
 
 MoveQueue.o: MoveQueue.c MoveQueue.h TileQueue.o
-	$(CXX) $(CFLAGS) -c MoveQueue.o
+	$(CXX) $(CFLAGS) -c MoveQueue.c
+
+Stack.o: Stack.c Stack.h Node.o
+	$(CXX) $(CFLAGS) -c Stack.c
 	
 clean: 
-	rm -f Map.o Tile.o Wall.o main.o API.o FloodFill.o TileQueue.o Node.o final.exe
+	rm -f Map.o Tile.o Wall.o main.o API.o FloodFill.o TileQueue.o Node.o Stack.o final.exe

@@ -34,7 +34,6 @@ bool sensorLeft();
 //-90 degrees
 bool sensorRight();
 
-
 //0 degrees
 bool sensorHead();
 

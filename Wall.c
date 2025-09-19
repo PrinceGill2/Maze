@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+//THough called wall this is more of a half block, it is composed of the top left most point
+//and an infinitely thin wall originating from this point to the right and down.
 struct Wall* createWall(int x, int y, int i, int j) {
     struct Wall* thing = (struct Wall*)malloc(sizeof(struct Wall));	
     if (thing == NULL) {

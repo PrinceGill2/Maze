@@ -40,8 +40,13 @@ void performFF(struct fFIll* fThing, struct Mouse* moThing, struct Map* mThing) 
             }
          }
     }
-
-
+    //Check to see if the current cell's distance is less than the surrounding 
+    //we can update it if that is the case essentially elevating the cell 
+    //making it possible for the "water" to travel to the other cells
+    if(check->manhattanValue - 1 < lowestManVal(MQ)) {
+      check->manhattanValue = lowestManValWALL(MQ, moThing, mapThing) + 1;
+      addToTheStack(MQ, stThing);
+    }
   
    //iff we can then we will do so and add the surrounding tiles (wall or not) to the stack
    

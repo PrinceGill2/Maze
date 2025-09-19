@@ -171,7 +171,6 @@ void putDownWall(struct Map* thing, struct Mouse* mThing, int direction, bool To
     }
     else if(direction == 180) {
         putWallHERED(struct Map* thing, mThing->i, mThing->j, ToF)
-
     }
     //not on the same tile so array location is adjusted
     else if(direction == 270) {
@@ -180,5 +179,4 @@ void putDownWall(struct Map* thing, struct Mouse* mThing, int direction, bool To
     else if(direction == 360 || direction == 0) {
         putWallHERED(struct Map* thing, mThing->i, mThing->j, ToF);
     }
-
 }
