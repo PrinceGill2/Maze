@@ -29,10 +29,12 @@ void establishWall(struct Wall* thing, bool right, bool down) {
 }
 
 void establishWallR(struct Wall* thing, bool right){
+    thing->checkedR = true;
     thing->right = right;
 }
 
 void establishWallD(struct Wall* thing, bool down){
+    thing->checkedD = true;
     thing->down = down;
 }
 
