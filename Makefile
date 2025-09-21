@@ -1,8 +1,8 @@
 CXX = g++
 CC = gcc
 CFLAGS = -Wall -g 
-#LDFLAGS = 
-OBJFILES = Wall.o main.o Tile.o Map.o API.o FloodFill.o TileQueue.o Node.o Stack.o
+LDFLAGS = -lm
+OBJFILES = Wall.o main.o Tile.o Map.o API.o fFill.o TileQueue.o Node.o Stack.o
 
 TARGET = final
 
@@ -11,7 +11,7 @@ all: $(TARGET)
 $(TARGET) : $(OBJFILES)
 	$(CXX) $(CFLAGS) -o $(TARGET) $(OBJFILES)
 
-main.o: main.c API.o Map.o Wall.o Tile.o FloodFill.o TileQueue.o Node.o
+main.o: main.c API.o Map.o Wall.o Tile.o fFill.o TileQueue.o Node.o
 	$(CXX) $(CLFAGS) -c main.c
 
 Wall.o : Wall.c Wall.h
@@ -26,8 +26,8 @@ Map.o: Map.c Map.h Tile.o Wall.o
 API.o: API.c API.h
 	$(CXX) $(CFLAGS) -c API.c
 
-FloodFill.o: FloodFill.c FloodFill.h TileQueue.o
-	$(CXX) $(CFLAGS) -c FloodFill.c
+fFill.o: fFill.c fFill.h TileQueue.o
+	$(CXX) $(CFLAGS) -c fFill.c
 
 TileQueue.o: TileQueue.c TileQueue.h Node.o Map.o 
 	$(CXX) $(CFLAGS) -c TileQueue.c
@@ -42,4 +42,4 @@ Stack.o: Stack.c Stack.h Node.o
 	$(CXX) $(CFLAGS) -c Stack.c
 	
 clean: 
-	rm -f Map.o Tile.o Wall.o main.o API.o FloodFill.o TileQueue.o Node.o Stack.o final.exe
+	rm -f Map.o Tile.o Wall.o main.o API.o fFill.o TileQueue.o Node.o Stack.o final.exe

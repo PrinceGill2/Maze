@@ -55,7 +55,7 @@ void deleteQueue(struct TileQueue* qThing) {
 	while(qThing->head != qThing->rear) {
 	struct Node* tmp = qThing->head;
 	qThing->head = qThing->head->nextNode;
-	free(tmp)
+	free(tmp);
 	}
 	qThing->rear = NULL;
 	free(qThing->head);

@@ -14,22 +14,18 @@ struct Stack* createStack() {
 }
 bool push(struct Stack* stThing, struct Tile* thing){
     struct Node* tmp = createNode(thing);
-
     if (tmp == NULL) {
     return false
     }
-
     if(stThing->head == NULL) {
     stThing->head = tmp'
     }
     else {
     tmp->nextNode = stThing->head;
     stThing->head = tmp;
-        
     }
     stThing->size++;
     return true;
-
 }
 
 struct Tile* pop(struct Stack* stThing){

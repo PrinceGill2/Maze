@@ -1,3 +1,4 @@
+#pragma once
 #include "Node.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -5,7 +6,7 @@ struct Stack {
     struct Node* head;
 
     int size;
-}
+};
 
 struct Stack* createStack();
 

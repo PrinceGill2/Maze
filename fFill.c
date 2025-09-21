@@ -2,7 +2,7 @@
 
 struct fFill* createFF() {
     struct fFill* fThing = (struct fFill*)malloc(sizeof(struct fFill));
-    (fThing == NULL) {
+    if (fThing == NULL) {
         printf("null pointer\n");
         exit(EXIT_FAILURE);
     }
@@ -27,34 +27,37 @@ void performFF(struct fFIll* fThing, struct Mouse* moThing, struct Map* mThing) 
         double transI = sin(angle);
         if(abs(transJ) == 1 || abs(transI) == 1) {
             if(angle == PI/2) {
-            enqueue(MQ, mThing->tileMap[i][j]);
+            enqueue(MQ->bQueue, mThing->tileMap[i][j]);
             }
             if(angle == PI) {
-            enqueue(MQ, mThing->tileMap[i][j]);
+            enqueue(MQ->bQueue, mThing->tileMap[i][j]);
             }
             if(angle == 3*(PI/2)) {
-            enqueue(MQ, mThing->tileMap[i][j]);
+            enqueue(MQ->bQueue, mThing->tileMap[i][j]);
             }
             if(angle == 2*PI) {
-            enqueue(MQ, mThing->tileMap[i][j]);
+            enqueue(MQ->bQueue, mThing->tileMap[i][j]);
             }
          }
     }
     //Check to see if the current cell's distance is less than the surrounding 
     //we can update it if that is the case essentially elevating the cell 
     //making it possible for the "water" to travel to the other cells
-    if(check->manhattanValue - 1 < lowestManVal(MQ)) {
-      check->manhattanValue = lowestManValWALL(MQ, moThing, mapThing) + 1;
+    if(check->manhattanValue - 1 < lowestManVal(MQ)->thing->manhattanValue) {
+      check->manhattanValue = lowestManValWALL(MQ, moThing, mThing) + 1;
       addToTheStack(MQ, stThing);
     }
   
    //iff we can then we will do so and add the surrounding tiles (wall or not) to the stack
    
    //if we cannot then we move on to the next tile
+   //
+   //MAKE SURE TO DELETE THE MOVEQUEUE BETWEEN ITERATIONS
    }
 }
 
 void destroyFF(struct fFILL* fThing){
     deleteMap(fThing->theMap);
     destroyMouse(fThing->theMouse);
+    free(fThing);
 }

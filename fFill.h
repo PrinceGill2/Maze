@@ -1,16 +1,17 @@
+#pragma once
 #include "Map.h"
 #include "TileQueue.h"
 #include "Node.h"
 #include "MoveQueue.h"
 #include "Mouse.h"
 #include "Stack.h"
-#inlcude <math.h>
+#include <math.h>
 
 struct fFill {
     struct Map* theMap;
     struct Mouse* theMouse;
      
-}
+};
 
 struct fFill* createFF();
 

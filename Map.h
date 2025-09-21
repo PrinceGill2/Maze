@@ -1,6 +1,7 @@
 #pragma once 
 #include "Tile.h"
 #include "Wall.h"
+#include "Mouse.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

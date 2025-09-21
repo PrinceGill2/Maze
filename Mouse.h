@@ -1,3 +1,4 @@
+#pragma once
 #include <stdio.h>
 #include <stdlib.h>
 #include "API.h"
@@ -10,7 +11,7 @@ struct Mouse {
     int j;
 
     int orientation;
-}
+};
 //the x and y coordinates along with the array position
 struct Mouse* createMouse(int x, int y, int i, int j, int orientation);
 
@@ -18,15 +19,15 @@ void adjustLocation(struct Mouse* thing, int x, int y, int i, int j);
 
 void adjustDirection(struct Mouse* thing, int orientation);
 
-void wrapOrientation(struct* Mouse thing);
+void wrapOrientation(struct Mouse* thing);
 
-void moveForward(struct* Mouse thing);
+void moveForward(struct Mouse* thing);
 
 // +90 degrees
-void turnLeft(struct* Mouse thing);
+void turnLeft(struct Mouse* thing);
 
 //-90 degrees
-void turnRight(struct* Mouse thing);
+void turnRight(struct Mouse* thing);
 
 //90 degrees
 bool sensorLeft();

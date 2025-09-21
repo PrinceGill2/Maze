@@ -64,7 +64,7 @@ int lowestManValWALL(struct MoveQueue* mQ. struct Mouse* mThing, struct Map* map
     return lowestManVal;
 }
 
-void addToTheStack(struct MoveQueue* mQ. struct Stack* stThing){ 
+void addToTheStack(struct MoveQueue* mQ, struct Stack* stThing){ 
     struct Node* currentNode = mQ->bQueue->head;
     for(int i = 0; i < 4; i++) {
         push(stThing, currentNode->thing);
